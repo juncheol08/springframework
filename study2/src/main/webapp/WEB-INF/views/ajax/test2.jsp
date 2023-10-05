@@ -20,14 +20,14 @@
     </ul>
 </nav>
 
-<button id="btn1">Get 전송</button>
+<button id="btn1">POST 전송</button>
 
 <script>
     $(document).ready(function () {
         // var obj
         let fn1 = () => $.ajax({
-            type:"get",
-            url:"${path1}/ajax/test1pro?msg=데이터전송",
+            type:"POST",
+            url:"${path1}/ajax/test2pro?msg=데이터전송",
             success:function (res) { console.log("성공",res);},
             error:function (err) { console.log("실패",err);}
         });

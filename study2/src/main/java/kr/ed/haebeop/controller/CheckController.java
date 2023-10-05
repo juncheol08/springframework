@@ -64,8 +64,13 @@ public class CheckController {
         return page;
     }
 
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) {
+    @InitBinder("check")
+    protected void initBinder(WebDataBinder binder){
+        binder.setValidator(new CheckValidator());
+    }
+
+    @InitBinder("chk")
+    protected void initBinder2(WebDataBinder binder){
         binder.setValidator(new CheckValidator2());
     }
     @GetMapping("check5")

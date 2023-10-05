@@ -18,5 +18,13 @@ public class TestServiceImpl implements TestService {
         return testRepository2.testList();
     }
 
+    @Override
+    public TestVO getTest(int num) throws Exception {
+        return testRepository2.getTest(num);
+    }
 
+    @Override
+    public void testInsert(TestVO test) throws Exception {
+        testRepository2.testInsert(test);
+    }
 }

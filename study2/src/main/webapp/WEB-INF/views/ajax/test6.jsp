@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test1</title>
+    <title>test5</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -19,20 +19,23 @@
         <li><a href="${path1}/ajax/">Home</a></li>
     </ul>
 </nav>
-
-<button id="btn1">Get 전송</button>
+<input type="text" name="age" id="age" placeholder="나이 입력" required><br>
+<input type="text" name="name" id="name" placeholder="이름 입력" required><br>
+<button id="btn6" type="button">Post 전송</button>
 
 <script>
     $(document).ready(function () {
-        // var obj
-        let fn1 = () => $.ajax({
-            type:"get",
-            url:"${path1}/ajax/test1pro?msg=데이터전송",
-            success:function (res) { console.log("성공",res);},
-            error:function (err) { console.log("실패",err);}
+        $("#btn6").click(function () {
+            var human = {"age":parseInt($(this).val()), "name":$(this).val()};
+            $.ajax({
+                type:"post",
+                url:"${path1}/ajax/test6pro",
+                data:human,
+                success:function(res) { console.log("성공",res); },
+                error:function (err) { console.log("실패",err);}
+            });
         });
-        $("#btn1").on("click", function () { fn1() });
-    })
+    });
 </script>
 
 
