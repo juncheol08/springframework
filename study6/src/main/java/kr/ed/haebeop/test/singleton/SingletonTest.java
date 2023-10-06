@@ -1,4 +1,4 @@
-package kr.ed.haebeop.test;
+package kr.ed.haebeop.test.singleton;
 
 public class SingletonTest {
     static DoubletonService dobleService1 = new DoubletonService();

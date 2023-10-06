@@ -1,6 +1,4 @@
-package kr.ed.haebeop.test;
-
-import javax.inject.Singleton;
+package kr.ed.haebeop.test.singleton;
 
 
 public class SingletonService {
